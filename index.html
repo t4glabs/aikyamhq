@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aikyam | Holding space for changemakers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+        
+        :root {
+            --background: #EBEEF1;
+            --card-bg: #FFFFFF;
+            --text-primary: #000000;
+            --text-secondary: #000000;
+            --accent: #8a63d2;
+            --link-gap: 12px;
+            --border-radius: 12px;
+        }
+        
+        body {
+            background-color: var(--background);
+            color: var(--text-primary);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            padding: 16px;
+            line-height: 1.5;
+        }
+        
+        .container {
+            max-width: 600px;
+            width: 100%;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+        
+        .profile-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 20px 0 40px;
+        }
+        
+        .profile-image {
+            width: 96px;
+            height: 96px;
+            border-radius: 50%;
+            object-fit: contain;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+        }
+        
+        .profile-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        
+        .profile-description {
+            color: var(--text-secondary);
+            font-size: 16px;
+            max-width: 80%;
+        }
+        
+        .links-container {
+            display: flex;
+            flex-direction: column;
+            gap: var(--link-gap);
+            margin-bottom: 40px;
+        }
+        
+        .section-header {
+            font-size: 18px;
+            font-weight: 700;
+            margin: 20px 0 12px;
+            padding-left: 8px;
+        }
+        
+        .link-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            position: relative;
+            transition: transform 0.2s ease;
+        }
+        
+        .link-card:hover {
+            transform: translateY(-2px);
+        }
+        
+        .card-link {
+            display: flex;
+            padding: 16px;
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .card-image {
+            width: 60px;
+            height: 60px;
+            border-radius: 8px;
+            object-fit: cover;
+            margin-right: 16px;
+            background-color: #333;
+        }
+        
+        .card-text {
+            font-size: 16px;
+            font-weight: 500;
+            flex: 1;
+            display: flex;
+            align-items: center;
+        }
+        
+        .share-button {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: transparent;
+            border: none;
+            color: var(--text-secondary);
+            cursor: pointer;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .share-button:hover {
+            color: var(--text-primary);
+        }
+        
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-top: 20px;
+        }
+        
+        .social-icon {
+            width: 32px;
+            height: 32px;
+            color: var(--text-primary);
+            transition: transform 0.2s ease;
+        }
+        
+        .social-icon:hover {
+            transform: scale(1.1);
+        }
+        
+        .footer {
+            margin-top: auto;
+            padding: 30px 0 20px;
+            text-align: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            font-size: 12px;
+            color: var(--text-secondary);
+            margin-top: 20px;
+        }
+        
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .linktree-button {
+            display: inline-flex;
+            align-items: center;
+            background-color: white;
+            color: black;
+            padding: 10px 16px;
+            border-radius: 15px;
+            font-weight: 600;
+            text-decoration: none;
+            gap: 8px;
+            margin-top: 20px;
+            transition: all 0.2s ease;
+        }
+        
+        .linktree-button:hover {
+            background-color: #e6e4e4;
+            transform: translateY(-2px);
+        }
+        
+        .linktree-icon {
+            height: 16px;
+        }
+        
+        @media (max-width: 480px) {
+            .profile-description {
+                max-width: 100%;
+            }
+            
+            .card-text {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Profile Section -->
+        <div class="profile-section">
+            <img src="https://ugc.production.linktr.ee/06267ca4-d380-41bc-ba2f-50c439b32c05_logosqewhite.png?io=true&size=avatar-v3_0" alt="aikyam logo" class="profile-image">
+            <h1 class="profile-title">aikyam</h1>
+            <p class="profile-description">Holding space for changemakers.<br><br>aikyam / ഐക്യം / ऐक्यम | noun. unity</p>
+        </div>
+        
+        <!-- Links Container -->
+        <div class="links-container">
+            <!-- Testimonials Section -->
+            <h2 class="section-header">Testimonials</h2>
+            
+            <div class="link-card">
+                <a href="https://aikyam.space/nurturing-growth-with-ilab-india/" target="_blank" class="card-link">
+                    <div class="card-image" style="background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);"></div>
+                    <p class="card-text">"Rare to find such in-depth program design workshop for NGOs"</p>
+                </a>
+            </div>
+            
+            <div class="link-card">
+                <a href="https://aikyamfellows.org/discoverability-workshop-helps-ignite-india-build-new-storytelling-platform/" target="_blank" class="card-link">
+                    <div class="card-image" style="background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);"></div>
+                    <p class="card-text">"I made our impact storytelling site with zero coding skills!"</p>
+                </a>
+                
+            </div>
+            
+            <div class="link-card">
+                <a href="https://aikyam.space/mashqura-fareedi-of-hopes-and/" target="_blank" class="card-link">
+                    <div class="card-image" style="background: linear-gradient(135deg, #d4fc79 0%, #96e6a1 100%);"></div>
+                    <p class="card-text">"aikyam makes changemaking journey a collaborative experience"</p>
+                </a>
+                
+            </div>
+            
+            <!-- Our Initiatives Section -->
+            <h2 class="section-header">Our initiatives</h2>
+            
+            <div class="link-card">
+                <a href="https://aikyam.space/" target="_blank" class="card-link">
+                    <div class="card-image" style="background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);"></div>
+                    <p class="card-text">Psychologically Safe Spaces & Bootcamps for Changemakers</p>
+                </a>
+                
+            </div>
+            
+            <div class="link-card">
+                <a href="https://aikyamfellows.org/" target="_blank" class="card-link">
+                    <div class="card-image" style="background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);"></div>
+                    <p class="card-text">Making Technology Accessible to Changemakers</p>
+                </a>
+                
+            </div>
+            
+            <div class="link-card">
+                <a href="https://aikyamjobs.org/" target="_blank" class="card-link">
+                    <div class="card-image" style="background: linear-gradient(135deg, #a6c0fe 0%, #f68084 100%);"></div>
+                    <p class="card-text">Hand Curated Jobs from Social Impact Orgs</p>
+                </a>
+                
+            </div>
+            
+            <div class="link-card">
+                <a href="https://aikyam.fund/about/" target="_blank" class="card-link">
+                    <div class="card-image" style="background: linear-gradient(135deg, #cd9cf2 0%, #f6f3ff 100%);"></div>
+                    <p class="card-text">Making Resilience Accessible to early stage Changemakers</p>
+                </a>
+                
+            </div>
+            
+            <!-- Our Alliances Section -->
+            <h2 class="section-header">Our Alliances</h2>
+            
+            <div class="link-card">
+                <a href="https://pattic.org/" target="_blank" class="card-link">
+                    <div class="card-image" style="background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);"></div>
+                    <p class="card-text">Regulatory Compliances Made Accessible to NGOs</p>
+                </a>
+                
+            </div>
+            
+            <div class="link-card">
+                <a href="https://oasishq.org/" target="_blank" class="card-link">
+                    <div class="card-image" style="background: linear-gradient(135deg, #5ee7df 0%, #b490ca 100%);"></div>
+                    <p class="card-text">Technology [FOSS] for Social Impact</p>
+                </a>
+                
+            </div>
+            
+            <!-- Contact Us Section -->
+            <h2 class="section-header">Contact Us</h2>
+            
+            <div class="link-card">
+                <a href="https://calendar.app.google/ohLubtmAcjXbkhfZ9" target="_blank" class="card-link">
+                    <div class="card-image" style="background: linear-gradient(135deg, #d299c2 0%, #fef9d7 100%);"></div>
+                    <p class="card-text">How can we help? Schedule a Call</p>
+                </a>
+                
+            </div>
+            
+            <div class="link-card">
+                <a href="https://aikyamfellows.org/aikyam-documents/" target="_blank" class="card-link">
+                    <div class="card-image" style="background: linear-gradient(135deg, #fccb90 0%, #d57eeb 100%);"></div>
+                    <p class="card-text">We Are Proudly Not for Profit</p>
+                </a>
+                
+            </div>
+        </div>
+        
+        <!-- Social Icons -->
+        <div class="social-icons">
+            <a href="mailto:shemeer@aikyamhq.com" aria-label="Email">
+                <svg class="social-icon" viewBox="0 0 24 24">
+                    <path d="M4.30606 7.28017C4.14002 7.62375 4.06901 7.99473 4.03469 8.4148C3.99999 8.83953 3.99999 9.36401 4 10.0143V13.9857C3.99999 14.6359 3.99999 15.1604 4.03469 15.5852C4.07042 16.0225 4.14591 16.4066 4.32698 16.7619C4.6146 17.3264 5.07354 17.7854 5.63803 18.073C5.9934 18.2541 6.37752 18.3296 6.81483 18.3653C7.23955 18.4 7.76404 18.4 8.4143 18.4H15.5857C16.236 18.4 16.7605 18.4 17.1852 18.3653C17.6225 18.3296 18.0066 18.2541 18.362 18.073C18.9265 17.7854 19.3854 17.3264 19.673 16.7619C19.8541 16.4066 19.9296 16.0225 19.9653 15.5852C20 15.1604 20 14.6359 20 13.9857V10.0143C20 9.36401 20 8.83953 19.9653 8.4148C19.931 7.99473 19.86 7.62375 19.6939 7.28017L13.8997 12.0209C12.7946 12.9251 11.2054 12.9251 10.1003 12.0209L4.30606 7.28017Z"></path>
+                    <path d="M18.9609 6.3295C18.7792 6.17262 18.5783 6.0372 18.362 5.92696C18.0066 5.74588 17.6225 5.6704 17.1852 5.63467C16.7605 5.59997 16.236 5.59997 15.5857 5.59998H8.41432C7.76406 5.59997 7.23955 5.59997 6.81483 5.63467C6.37752 5.6704 5.9934 5.74588 5.63803 5.92696C5.42166 6.0372 5.2208 6.17262 5.03915 6.3295L10.8602 11.0922C11.5232 11.6347 12.4768 11.6347 13.1398 11.0922L18.9609 6.3295Z"></path>
+                </svg>
+            </a>
+            <a href="https://www.linkedin.com/in/shemeer-babu-2590a7196/" target="_blank" aria-label="LinkedIn">
+                <svg class="social-icon" viewBox="0 0 24 24">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M9.29192 9.29151H12.6018V10.9786H12.6381C13.1427 10.0689 14.6331 9.14516 16.476 9.14516C20.013 9.14516 21 11.0231 21 14.5016V20.9996H17.4876V15.142C17.4876 13.5849 16.8659 12.2185 15.4117 12.2185C13.6462 12.2185 12.8043 13.4139 12.8043 15.3762V20.9996H9.29192V9.29151ZM3.43788 20.9996H6.95031V9.29151H3.43788V20.9996ZM7.38936 5.19368C7.38949 5.48192 7.33284 5.76737 7.22264 6.03372C7.11244 6.30007 6.95085 6.5421 6.74711 6.74599C6.54336 6.94988 6.30145 6.11165 6.03518 6.22203C5.76892 6.33243 5.48351 6.38928 5.19526 6.38936C4.90702 6.38944 4.62158 6.33273 4.35526 6.22248C4.08893 6.11224 3.84693 5.9506 3.64307 5.74682C3.43922 5.54304 3.2775 5.30109 3.16716 5.0348C3.05682 4.76851 3.00002 4.4831 3 4.19485C2.99995 3.61286 3.23108 3.05468 3.64254 2.64307C4.054 2.23147 4.6121 2.00016 5.19409 3C5.77609 2.99984 6.33431 3.23086 6.74599 3.64225C7.15767 4.05363 7.38909 4.61169 7.38936 5.19368Z"></path>
+                </svg>
+            </a>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <a href="https://aikyamfellows.org/#/portal/signup" target="_blank" class="linktree-button">
+                <svg class="linktree-icon" viewBox="0 0 24 25">
+                    <path d="M13.5108 5.85343L17.5158 1.73642L19.8404 4.11701L15.6393 8.12199H21.5488V11.4268H15.6113L19.8404 15.5345L17.5158 17.8684L11.7744 12.099L6.03299 17.8684L3.70842 15.5438L7.93745 11.4361H2V8.12199H7.90944L3.70842 4.11701L6.03299 1.73642L10.038 5.85343V0H13.5108V5.85343ZM10.038 16.16H13.5108V24.0019H10.038V16.16Z" fill="#000000"></path>
+                </svg>
+                Signup for aikyamfellows newsletter
+            </a>
+            
+            <div class="footer-links">
+                <!-- <button class="ot-sdk-show-settings">Cookies</button> -->
+                <span>·</span>
+                <a href="https://aikyamfellows.org/about/" target="_blank">About Us</a>
+                <span>·</span>
+                <a href="https://aikyamfellows.org/contact/" target="_blank">Contact Us</a>
+                <span>·</span>
+                <a href="https://aikyamfellows.org/privacy-policy/" target="_blank">Privacy</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
